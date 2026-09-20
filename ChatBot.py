@@ -19,6 +19,7 @@ llm = AzureChatOpenAI(
 )
 
 def process(state: AgentState) -> AgentState:
+    """This is the function that will be called when the agent is invoked. It takes the current state as input and returns the updated state."""
     response = llm.invoke(state["messages"])
     print(f"\nAI: {response.content}\n")
     state["messages"].append(AIMessage(content=response.content))
