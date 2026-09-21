@@ -37,7 +37,7 @@ def add(a: int, b: int) -> int:
 def subtract(a: int, b: int) -> int:
     """This function returns difference of two numbers"""
     if(a < b):
-        swap(a, b)
+        a, b = b, a
     return a - b
 
 @tool
